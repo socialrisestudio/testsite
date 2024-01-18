@@ -1,4 +1,4 @@
-fetch('https://ipinfo.io/json?token=d6a3cde87c2e63')
+fetch('http://ip-api.com/json/')
 .then(response => response.json())
 .then(data => {
     const locationElement = document.getElementById('user-location');
