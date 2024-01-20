@@ -1,4 +1,4 @@
-let currentSlide = 0;
+/*let currentSlide = 0;
 const slides = document.querySelectorAll('.carousel-item');
 
 function showSlide(index) {
@@ -16,3 +16,4 @@ function moveCarousel(direction) {
 
 // Initialize the carousel by showing the first slide
 showSlide(currentSlide);
+*/
