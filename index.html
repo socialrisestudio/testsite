@@ -1,95 +1,34 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
-    .carousel-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      position: relative;
-    }
-    .carousel-container img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      font-size: 24px;
-      color: #333;
-    }
-    .carousel-button.left {
-      left: 1rem;
-    }
-    .carousel-button.right {
-      right: 1rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Sample Site</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white font-inter">
-  <div class="text-center py-6 bg-gray-200">
-    <h1 class="text-3xl font-bold">OnlyFans</h1>
-  </div>
-
-  <div class="carousel-container">
-    <button class="carousel-button left">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <img src="https://placehold.co/300x300" alt="A profile image of an individual, placeholder for the carousel image 1">
-    <img src="https://placehold.co/300x300" alt="A profile image of an individual, placeholder for the carousel image 2" class="hidden">
-    <img src="https://placehold.co/300x300" alt="A profile image of an individual, placeholder for the carousel image 3" class="hidden">
-    <img src="https://placehold.co/300x300" alt="A profile image of an individual, placeholder for the carousel image 4" class="hidden">
-    <img src="https://placehold.co/300x300" alt="A profile image of an individual, placeholder for the carousel image 5" class="hidden">
-    <button class="carousel-button right">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="text-center">
-      <p class="text-xl py-4"><span class="text-red-500 font-bold">75% OFF FOR 10 SUBS ONLY 🔥 @sarawifey</span></p>
-      <p>I usually travel between Southampton, Cuenca and San Jose 🌍 and looking for SHOOTING PARTNER</p>
-      <span class="text-green-500">● Online Now</span>
-      <p>Always in the gym and watching netflixx 😏</p>
-      <p>📍 I'm in San Jose right now so CHAT with me!</p>
+<body>
+<div class="container">
+    <div class="header">
+        <img src="logo.png" alt="Logo">
     </div>
-    <div class="text-center py-6">
-      <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-lg">
-        SUBSCRIBE TO MY ONLYFANS ❤️
-      </button>
+    <div class="content">
+        <div class="profile">
+            <div class="profile-images">
+                <img src="profile1.jpg" alt="Profile Image 1">
+                <img src="profile2.jpg" alt="Profile Image 2">
+                <img src="profile3.jpg" alt="Profile Image 3">
+            </div>
+            <div class="profile-info">
+                <h2>@sarawifey</h2>
+                <p>I usually travel between Southampton, Cuenca, and San Jose and looking for SHOOTING PARTNER</p>
+                <span class="status online">Online Now</span>
+                <p>Always in the gym and watching netflixx 😉</p>
+                <p><strong>Im in San Jose right now so CHAT with me!</strong></p>
+                <button class="subscribe-button">SUBSCRIBE TO MY ONLYFANS ❤️</button>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <script>
-    const carousel = document.querySelector('.carousel-container');
-    const images = carousel.querySelectorAll('img');
-    let idx = 0;
-    
-    function showImage(index) {
-      images.forEach(img => img.classList.add('hidden'));
-      images[index].classList.remove('hidden');
-    }
-
-    carousel.querySelector('.left').addEventListener('click', () => {
-      idx = idx > 0 ? idx - 1 : images.length - 1;
-      showImage(idx);
-    });
-
-    carousel.querySelector('.right').addEventListener('click', () => {
-      idx = idx < images.length - 1 ? idx + 1 : 0;
-      showImage(idx);
-    });
-  </script>
+</div>
+<script src="scripts.js"></script>
 </body>
 </html>
