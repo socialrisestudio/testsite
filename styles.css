@@ -1,53 +1,7 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.header img {
-    width: 100%;
-}
-
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.profile {
-    text-align: center;
-}
-
-.profile-images img {
-    width: 150px;
-    margin: 5px;
-}
-
-.profile-info {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.status.online {
-    color: green;
-}
-
-.subscribe-button {
-    background-color: red;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.subscribe-button:hover {
-    background-color: darkred;
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  #teacher {
+    display:none;
+    
+  }
 }
