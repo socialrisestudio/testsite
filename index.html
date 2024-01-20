@@ -1,34 +1,95 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profile Page</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      position: relative;
+    }
+    .carousel-container img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: #333;
+    }
+    .carousel-button.left {
+      left: 1rem;
+    }
+    .carousel-button.right {
+      right: 1rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+<body class="bg-white font-inter">
+  <div class="text-center py-6 bg-gray-200">
+    <h1 class="text-3xl font-bold">OnlyFans</h1>
+  </div>
 
-<div class="container mx-auto mt-10">
-    <div class="flex justify-center">
-        <div class="bg-white p-5 rounded-lg shadow-lg">
-            <div class="mb-4">
-                <!-- Placeholder for profile images -->
-                <img src="https://placehold.co/150x150" alt="Profile image placeholder" class="rounded-full h-24 w-24 md:h-48 md:w-48 mx-auto">
-            </div>
-            <div class="text-center">
-                <div class="text-2xl text-gray-900">75% OFF FOR 10 SUBS ONLY 🔥 @sarawifey</div>
-                <p class="text-gray-800 mt-2">I usually travel between Southampton, Cuenca and San Jose 📍 and looking for SHOOTING PARTNER</p>
-                <div class="text-green-500">Online Now</div>
-                <p class="text-gray-600 mt-2">Always in the gym and watching netflixx 😊</p>
-                <p class="text-gray-600">📍 Im in San Jose right now so CHAT with me!</p>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
-                    SUBSCRIBE TO MY ONLYFANS ❤️
-                </button>
-            </div>
-        </div>
+  <div class="carousel-container">
+    <button class="carousel-button left">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <img src="https://placehold.co/300x300" alt="A profile image of an individual, placeholder for the carousel image 1">
+    <img src="https://placehold.co/300x300" alt="A profile image of an individual, placeholder for the carousel image 2" class="hidden">
+    <img src="https://placehold.co/300x300" alt="A profile image of an individual, placeholder for the carousel image 3" class="hidden">
+    <img src="https://placehold.co/300x300" alt="A profile image of an individual, placeholder for the carousel image 4" class="hidden">
+    <img src="https://placehold.co/300x300" alt="A profile image of an individual, placeholder for the carousel image 5" class="hidden">
+    <button class="carousel-button right">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center">
+      <p class="text-xl py-4"><span class="text-red-500 font-bold">75% OFF FOR 10 SUBS ONLY 🔥 @sarawifey</span></p>
+      <p>I usually travel between Southampton, Cuenca and San Jose 🌍 and looking for SHOOTING PARTNER</p>
+      <span class="text-green-500">● Online Now</span>
+      <p>Always in the gym and watching netflixx 😏</p>
+      <p>📍 I'm in San Jose right now so CHAT with me!</p>
     </div>
-</div>
+    <div class="text-center py-6">
+      <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full text-lg">
+        SUBSCRIBE TO MY ONLYFANS ❤️
+      </button>
+    </div>
+  </div>
 
+  <script>
+    const carousel = document.querySelector('.carousel-container');
+    const images = carousel.querySelectorAll('img');
+    let idx = 0;
+    
+    function showImage(index) {
+      images.forEach(img => img.classList.add('hidden'));
+      images[index].classList.remove('hidden');
+    }
+
+    carousel.querySelector('.left').addEventListener('click', () => {
+      idx = idx > 0 ? idx - 1 : images.length - 1;
+      showImage(idx);
+    });
+
+    carousel.querySelector('.right').addEventListener('click', () => {
+      idx = idx < images.length - 1 ? idx + 1 : 0;
+      showImage(idx);
+    });
+  </script>
 </body>
 </html>
