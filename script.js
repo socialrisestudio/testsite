@@ -1,9 +1,7 @@
-fetch('https://ipinfo.io/json?token=d6a3cde87c2e63')
-.then(response => response.json())
-.then(data => {
-    const locationElement = document.getElementById('user-location');
-    locationElement.textContent = data.city || 'your location'; // Fallback to 'your location' if city is not available
-})
-.catch(() => {
-    document.getElementById('user-location').textContent = 'your location';
+// This script should be updated with the actual API call to get the location
+document.addEventListener('DOMContentLoaded', () => {
+    const locationElements = document.querySelectorAll('#user-location');
+    // Use your geolocation API call here to replace the placeholder text
+    // For this example, it's just a static text
+    locationElements.forEach(el => el.textContent = 'San Jose'); // Replace 'San Jose' with the actual API call result
 });
